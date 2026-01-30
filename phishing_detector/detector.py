@@ -32,11 +32,12 @@ def analyze_webpage(url: str) -> str:
     Returns:
         Analysis report string
     """
-    # Validate and normalize URL
-    if not is_valid_url(url):
-        return "❌ Error: Invalid URL format"
-    
+    # Normalize URL first
     normalized_url = normalize_url(url)
+    
+    # Validate the normalized URL
+    if not is_valid_url(normalized_url):
+        return "❌ Error: Invalid URL format"
     
     print(f"🔍 Analyzing: {normalized_url}")
     print("⏳ Fetching webpage...")

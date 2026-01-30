@@ -1,8 +1,8 @@
 import re
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
-def check_brand_mismatch(title: str, domain: str) -> Dict[str, any]:
+def check_brand_mismatch(title: str, domain: str) -> Dict[str, Any]:
     """
     Check for brand/domain mismatch - a common phishing indicator.
     
@@ -92,7 +92,7 @@ def check_brand_mismatch(title: str, domain: str) -> Dict[str, any]:
     return result
 
 
-def analyze_suspicious_content(title: str, meta_description: str = "") -> Dict[str, any]:
+def analyze_suspicious_content(title: str, meta_description: str = "") -> Dict[str, Any]:
     """
     Analyze page content for suspicious patterns.
     
@@ -203,7 +203,7 @@ def extract_meta_tags(soup) -> Dict[str, str]:
     return meta_data
 
 
-def check_https_usage(page_url: str, forms: List[Dict]) -> Dict[str, any]:
+def check_https_usage(page_url: str, forms: List[Dict]) -> Dict[str, Any]:
     """
     Check for HTTPS inconsistencies.
     
